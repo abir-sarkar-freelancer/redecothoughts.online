@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+<section class="blog-post my-5">
+  <div class="container border-lr border-tb py-4">
+    <h1 class="blog-title">
+      {{ post.title }}
+    </h1>
+    <div class="blog-meta d-flex justify-content-between">
+      <div>
+        <span class="author">{{ post.author.username }}</span>
+        <span class="date-time">{{ post.date_published }}</span>
+        <span class="category">{{ post.category }}</span>
+      </div>
+      <div class="social-share">
+        <a href="#" class="text-secondary"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-secondary ms-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-secondary ms-2"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="text-secondary ms-2"><i class="fas fa-envelope"></i></a>
+      </div>
+      
+    </div>
+    <div class="card feature-image mt-3 fade-in" style="width:100%;">
+      <img src="{{ post.feature_image.url }}" class="img-fluid" alt="{{ post.title }}">
+    </div>
+    <div class="blog-content mt-4">
+      <p>{{ post.content }}</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

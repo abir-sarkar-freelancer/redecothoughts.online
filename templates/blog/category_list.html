@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<section class="hero mt-5">
+  <div class="container border-lr border-tb py-4">
+    <div class="row">
+      {% for category in categories %}
+      <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
+
+        <div class="card">
+          <img src="{{ category.image.url }}" class="card-img-top" alt="{{ category.title }}">
+          <div class="card-body">
+            <a href="{% url 'category_detail' slug=category.slug %}">
+              <h5 class="card-title">{{ category.title }}</h5>
+            </a>
+            <p class="card-text">{{ category.excerpt }}</p>
+          </div>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

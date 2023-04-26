@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/custom.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald&family=Playfair+Display&family=Roboto&family=Lato&family=Merriweather&family=Lora&family=Open+Sans&family=Nunito&family=PT+Serif&family=Montserrat&family=Raleway&display=swap"
+        rel="stylesheet">
+
+    <title>
+        {% block title %}
+        Blog
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+    {% include 'blog/navbar.html' %}
+    
+    {% block content %}
+    {% endblock %}
+
+
+    <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
